@@ -6,18 +6,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.abecerra.cleanarchitecture.R
+import com.abecerra.cleanarchitecture.core.navigator.FragmentNavigator
+import com.abecerra.cleanarchitecture.core.utils.extensions.Data
+import com.abecerra.cleanarchitecture.core.utils.extensions.DataState
+import com.abecerra.cleanarchitecture.core.utils.extensions.observe
+import com.abecerra.cleanarchitecture.core.utils.extensions.withViewModel
 import com.abecerra.cleanarchitecture.presentation.model.TestData
 import com.abecerra.cleanarchitecture.core.base.BaseFragment
-import com.abecerra.cleanarchitecture.core.navigator.FragmentNavigator
-import com.abecerra.cleanarchitecture.core.utils.extensions.*
 import kotlinx.android.synthetic.main.fragment_test_data.*
 import javax.inject.Inject
 
 
 class TestDataFragment : BaseFragment() {
-
-    @Inject
-    lateinit var viewModelFactory: ViewModelFactory
 
     @Inject
     lateinit var navigator: FragmentNavigator

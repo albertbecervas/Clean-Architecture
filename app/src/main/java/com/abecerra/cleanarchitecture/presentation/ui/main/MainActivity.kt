@@ -3,10 +3,10 @@ package com.abecerra.cleanarchitecture.presentation.ui.main
 import android.arch.lifecycle.ViewModelProvider
 import android.os.Bundle
 import com.abecerra.cleanarchitecture.R
-import com.abecerra.cleanarchitecture.core.utils.BarAdapter
-import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem
 import com.abecerra.cleanarchitecture.core.base.BaseActivity
 import com.abecerra.cleanarchitecture.core.navigator.ActivityNavigator
+import com.abecerra.cleanarchitecture.core.utils.BarAdapter
+import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem
 import com.abecerra.cleanarchitecture.core.utils.AppSharedPreferences
 import com.abecerra.cleanarchitecture.core.utils.extensions.withViewModel
 import com.abecerra.cleanarchitecture.presentation.ui.Test2Fragment
@@ -16,9 +16,6 @@ import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 
 class MainActivity : BaseActivity() {
-
-    @Inject
-    lateinit var viewModelFactory: ViewModelProvider.Factory
 
     @Inject
     lateinit var navigator: ActivityNavigator
