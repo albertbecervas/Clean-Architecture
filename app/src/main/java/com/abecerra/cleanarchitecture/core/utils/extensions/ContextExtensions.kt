@@ -2,18 +2,16 @@ package com.abecerra.cleanarchitecture.core.utils.extensions
 
 import android.app.Activity
 import android.app.Service
-import android.arch.lifecycle.*
 import android.content.Context
 import android.content.res.Resources
+import android.support.annotation.LayoutRes
 import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentActivity
 import android.support.v7.app.AppCompatActivity
 import android.text.SpannableString
 import android.text.style.RelativeSizeSpan
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.TextView
+import android.widget.Toast
 import com.abecerra.cleanarchitecture.core.App
 import com.base.project.core.di.component.AppComponent
 
@@ -27,38 +25,24 @@ fun AppCompatActivity.getAppComponent(): AppComponent = (app).appComponent
 fun Fragment.getAppComponent(): AppComponent = (app).appComponent
 fun Service.getAppComponent(): AppComponent = (app).appComponent
 
-inline fun <reified T : ViewModel> FragmentActivity.getViewModel(viewModelFactory: ViewModelProvider.Factory): T {
-    return ViewModelProviders.of(this, viewModelFactory)[T::class.java]
-}
-
-inline fun <reified T : ViewModel> FragmentActivity.withViewModel(
-    viewModelFactory: ViewModelProvider.Factory,
-    body: T.() -> Unit
-): T {
-    val vm = getViewModel<T>(viewModelFactory)
-    vm.body()
-    return vm
-}
-
-inline fun <reified T : ViewModel> Fragment.getViewModel(viewModelFactory: ViewModelProvider.Factory): T {
-    return ViewModelProviders.of(this, viewModelFactory)[T::class.java]
-}
-
-inline fun <reified T : ViewModel> Fragment.withViewModel(
-    viewModelFactory: ViewModelProvider.Factory,
-    body: T.() -> Unit
-): T {
-    val vm = getViewModel<T>(viewModelFactory)
-    vm.body()
-    return vm
-}
-
-fun <T : Any, L : LiveData<T>> LifecycleOwner.observe(liveData: L, body: (T?) -> Unit) {
-    liveData.observe(this, Observer(body))
-}
-
 fun ViewGroup.inflate(layoutId: Int, attachToRoot: Boolean = false): View =
     LayoutInflater.from(context).inflate(layoutId, this, attachToRoot)
+
+fun Fragment.toast(message: String, duration: Int = Toast.LENGTH_SHORT) {
+    Toast.makeText(this.context, message, duration).show()
+}
+
+fun Activity.toast(message: String, duration: Int = Toast.LENGTH_SHORT) {
+    Toast.makeText(this, message, duration).show()
+}
+
+fun enableFullScreen(window: Window) {
+    window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
+}
+
+fun inflate(@LayoutRes resourceLayout: Int, viewGroup: ViewGroup? = null, attachToRoot: Boolean = false): View {
+    return LayoutInflater.from(context).inflate(resourceLayout, viewGroup, attachToRoot)
+}
 
 fun setPriceWithIva(textView: TextView, price: String) {
     val iva = " +iva"
@@ -72,5 +56,6 @@ fun setPriceWithIva(textView: TextView, price: String) {
 
 val Int.dp: Int
     get() = (this / Resources.getSystem().displayMetrics.density).toInt()
+
 val Int.px: Int
     get() = (this * Resources.getSystem().displayMetrics.density).toInt()

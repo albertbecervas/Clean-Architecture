@@ -3,12 +3,12 @@ package com.abecerra.cleanarchitecture.presentation.ui.testdata
 import android.arch.lifecycle.MutableLiveData
 import com.abecerra.cleanarchitecture.presentation.model.TestData
 import com.abecerra.cleanarchitecture.presentation.model.mapper.TestDataMapper
-import com.abecerra.cleanarchitecture.core.base.BaseViewModel
 import com.abecerra.cleanarchitecture.core.utils.AppSharedPreferences
 import com.abecerra.cleanarchitecture.core.utils.extensions.Data
 import com.abecerra.cleanarchitecture.core.utils.extensions.DataState
 import com.abecerra.cleanarchitecture.core.utils.extensions.addToCompositeDisposable
 import com.abecerra.cleanarchitecture.domain.usecase.TestDataUseCase
+import com.abecerra.cleanarchitecture.core.base.BaseViewModel
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
