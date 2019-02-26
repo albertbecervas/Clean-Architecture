@@ -55,3 +55,10 @@ fun Any?.toBoolean(): Boolean {
         }
     } ?: false
 }
+
+fun <K> List<K>?.toList(): List<K> {
+    return this?.let {
+        if (it.isNotEmpty()) it
+        else arrayListOf()
+    } ?: arrayListOf<K>()
+}

@@ -1,8 +1,8 @@
 package com.abecerra.cleanarchitecture.presentation.model.mapper
 
-import com.abecerra.cleanarchitecture.presentation.model.TestData
 import com.abecerra.cleanarchitecture.core.base.BaseBidirectionalMapper
 import com.abecerra.cleanarchitecture.domain.model.TestDataModel
+import com.abecerra.cleanarchitecture.presentation.model.TestData
 import javax.inject.Inject
 import javax.inject.Singleton
 

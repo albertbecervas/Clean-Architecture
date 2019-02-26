@@ -2,18 +2,16 @@ package com.abecerra.cleanarchitecture.core.navigator
 
 import android.content.Intent
 import android.support.v4.app.Fragment
-import com.abecerra.cleanarchitecture.presentation.ui.maindetail.MainDetailActivity
+import com.abecerra.cleanarchitecture.presentation.ui.main.MainActivity
 import com.base.project.core.di.scopes.PerFragment
 import javax.inject.Inject
 
 @PerFragment
-class FragmentNavigator @Inject constructor(private val fragment: Fragment) {
+class FragmentNavigator @Inject constructor(private val fragment: Fragment) : Navigator {
 
-    fun navigateToMainDetailActivity() {
+    override fun navigateToMainActivity() {
         with(fragment) {
-            context?.let {
-                startActivity(Intent(it, MainDetailActivity::class.java))
-            }
+            startActivity(Intent(context, MainActivity::class.java))
         }
     }
 
