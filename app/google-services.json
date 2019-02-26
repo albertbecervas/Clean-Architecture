@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1020980314723",
+    "firebase_url": "https://base-479bb.firebaseio.com",
+    "project_id": "base-479bb",
+    "storage_bucket": "base-479bb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1020980314723:android:210c003a8ffd9daf",
+        "android_client_info": {
+          "package_name": "com.abecerra.cleanarchitecture"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1020980314723-fei51nv11lqipuqhch6jo0pg92ev6nd2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBlIFgKZrWbLOJnSjYjE2Ot-fy23cr_KmU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
